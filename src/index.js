@@ -26,6 +26,20 @@ export const bypassReducer = (baseType, savePrevData = true) => {
 	};
 };
 
+export const filterReducer = (baseType, initialState) => {
+	return (data = initialState, action) => {
+		const { type, payload } = action;
+
+		switch(type) {
+			case baseType:
+				return { ...state, ...payload.filter };
+			default:
+				return data
+
+		}
+	};
+}
+
 export const bypassAction = (type, url, callType, payload, params, auth = true) => {
 	return () => {
 		return {
