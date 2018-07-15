@@ -129,6 +129,24 @@ var bypassReducer = function bypassReducer(baseType) {
 	};
 };
 
+var filterReducer = function filterReducer(baseType, initialState) {
+	return function () {
+		var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+		var action = arguments[1];
+		var type = action.type,
+		    payload = action.payload;
+
+
+		switch (type) {
+			case baseType:
+				return _extends({}, state, payload.filter);
+			default:
+				return data;
+
+		}
+	};
+};
+
 var bypassAction = function bypassAction(type, url, callType, payload, params) {
 	var auth = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : true;
 
@@ -146,4 +164,5 @@ exports.FAIL = FAIL;
 exports.SUCCESS = SUCCESS;
 exports.START = START;
 exports.bypassReducer = bypassReducer;
+exports.filterReducer = filterReducer;
 exports.bypassAction = bypassAction;
