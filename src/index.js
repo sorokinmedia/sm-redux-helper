@@ -5,8 +5,8 @@ export const
 	SUCCESS = '_SUCCESS',
 	START = '_START';
 
-export const bypassReducer = (baseType, savePrevData = true) => {
-	return (data = {}, action) => {
+export const bypassReducer = (baseType, savePrevData = true, initialState = {}, clearType) => {
+	return (data = initialState, action) => {
 		const { type, response, error } = action;
 		const prevData = savePrevData && data;
 
@@ -20,6 +20,8 @@ export const bypassReducer = (baseType, savePrevData = true) => {
 					...prevData,
 					error
 			};
+			case clearType:
+				return initialState
 		}
 
 		return data;
