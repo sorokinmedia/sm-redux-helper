@@ -1,9 +1,9 @@
 import {buildUrlSearch} from "sm-string-helper";
 export const
 	URL = 'URL',
-	FAIL = 'FAIL',
-	SUCCESS = 'SUCCESS',
-	START = 'START';
+	FAIL = '_FAIL',
+	SUCCESS = '_SUCCESS',
+	START = '_START';
 
 export const bypassReducer = (baseType, savePrevData = true) => {
 	return (data = {}, action) => {
