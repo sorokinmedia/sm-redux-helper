@@ -32,7 +32,7 @@ export const filterReducer = (baseType, initialState) => {
 
 		switch(type) {
 			case baseType:
-				return { ...state, ...payload.filter };
+				return { ...data, ...payload.filter };
 			default:
 				return data
 

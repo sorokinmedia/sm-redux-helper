@@ -139,7 +139,7 @@ var filterReducer = function filterReducer(baseType, initialState) {
 
 		switch (type) {
 			case baseType:
-				return _extends({}, state, payload.filter);
+				return _extends({}, data, payload.filter);
 			default:
 				return data;
 
