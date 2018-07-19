@@ -21,10 +21,10 @@ export const bypassReducer = (baseType, savePrevData = true, initialState = {}, 
 					error
 			};
 			case clearType:
-				return initialState
+				return initialState;
+			default:
+				return data
 		}
-
-		return data;
 	};
 };
 
