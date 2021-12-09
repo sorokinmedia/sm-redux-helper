@@ -73,6 +73,6 @@
 	},
 	"dependencies": {
 		"jest-css-modules": "^2.1.0",
-		"sm-string-helper": "^1.0.2"
+		"sm-string-helper": "^1.1.1"
 	}
 }
